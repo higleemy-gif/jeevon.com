@@ -22,19 +22,19 @@ const SHOP_LINKS = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 border-t border-sand/70 bg-sage-900 text-sage-100">
+    <footer id="contact" className="scroll-mt-32 border-t border-sand/70 bg-sage-900 text-sage-100">
       <div className="container-page grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-1">
-          {/* The footer column has room for the full stacked lockup, so show
-              the real logo complete with its tagline. It sits on an ivory card
-              because the artwork is dark green on a light ground. */}
+          {/* The complete logo on an ivory card — the artwork is dark green on
+              a light ground, so it needs a light surface against the dark
+              footer. */}
           <img
             src="/logo.png"
             alt={`${BRAND.name} — Care, Nurture, Empower`}
-            width="346"
-            height="240"
-            className="h-24 w-auto rounded-2xl bg-ivory px-4 py-3"
+            width="461"
+            height="320"
+            className="h-28 w-auto rounded-2xl bg-ivory px-5 py-4"
           />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-sage-200">{BRAND.description}</p>
         </div>

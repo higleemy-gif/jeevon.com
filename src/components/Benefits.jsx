@@ -27,11 +27,11 @@ const BENEFITS = [
 /** "Why us" — four short, scannable reasons to trust the brand. */
 export default function Benefits() {
   return (
-    <section id="about" className="scroll-mt-24 py-20 sm:py-24">
+    <section id="about" className="scroll-mt-32 py-20 sm:py-24">
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           {/* Intro */}
-          <div className="lg:sticky lg:top-28 lg:self-start">
+          <div className="lg:sticky lg:top-36 lg:self-start">
             <Reveal
               as="p"
               className="text-xs font-semibold tracking-[0.18em] text-sage-600 uppercase"

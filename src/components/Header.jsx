@@ -44,24 +44,25 @@ export default function Header() {
           : 'border-b border-transparent'
       }`}
     >
-      <div className="container-page flex h-20 items-center justify-between gap-4">
+      {/* Taller than a typical header because the logo is a stacked lockup:
+          it needs real height for the wordmark and tagline to stay legible. */}
+      <div className="container-page flex h-24 items-center justify-between gap-4 sm:h-28">
         {/* Brand */}
-        {/* The supplied logo is a stacked lockup, so at header height its
-            wordmark would be unreadable. Pair the icon mark with live text
-            instead. `mix-blend-multiply` melts the artwork's near-white
-            background into the ivory header. */}
+        {/* The complete logo — mark, wordmark and tagline. No accompanying text
+            because the artwork already contains the brand name.
+            `mix-blend-multiply` melts the artwork's near-white background into
+            the ivory header so it reads as transparent. */}
         <a
           href="#top"
-          className="flex items-center gap-2.5 rounded-sm text-ink transition-opacity hover:opacity-80"
+          className="flex shrink-0 items-center rounded-sm transition-opacity hover:opacity-80"
         >
           <img
-            src="/logo-mark.png"
-            alt=""
-            width="153"
-            height="160"
-            className="h-10 w-auto mix-blend-multiply"
+            src="/logo.png"
+            alt={`${BRAND.name} — Care, Nurture, Empower`}
+            width="461"
+            height="320"
+            className="h-16 w-auto mix-blend-multiply sm:h-20"
           />
-          <span className="font-serif text-xl tracking-tight">{BRAND.name}</span>
         </a>
 
         {/* Desktop nav */}

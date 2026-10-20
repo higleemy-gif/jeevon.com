@@ -27,7 +27,7 @@ function SkeletonCard() {
  */
 export default function Products({ products, loading, selectedProductName, onSelectProduct }) {
   return (
-    <section id="products" className="scroll-mt-24 border-t border-sand/60 bg-cream/40 py-20 sm:py-24">
+    <section id="products" className="scroll-mt-32 border-t border-sand/60 bg-cream/40 py-20 sm:py-24">
       <div className="container-page">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">

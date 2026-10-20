@@ -252,7 +252,7 @@ export default function OrderForm({ products, selectedProductName, onProductChan
   return (
     <section
       id="order"
-      className="scroll-mt-24 border-t border-sand/60 bg-cream/40 py-20 sm:py-24"
+      className="scroll-mt-32 border-t border-sand/60 bg-cream/40 py-20 sm:py-24"
     >
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">

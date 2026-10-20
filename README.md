@@ -219,15 +219,14 @@ Read orders from Studio, or server-side with the `service_role` key.
 
 ### Logo
 
-The master artwork lives in `logo/`. The web assets in `public/` are generated
-from it, not hand-edited:
+The master artwork lives in `logo/`. Everything in `public/` is generated from
+it, and all three use the **complete** logo — mark, wordmark and tagline:
 
-| File                   | Used for                                              |
-| ---------------------- | ----------------------------------------------------- |
-| `public/logo.png`      | Full stacked lockup — shown in the footer             |
-| `public/logo-mark.png` | Icon mark only — shown in the header beside the name  |
-| `public/favicon.png`   | Browser tab and iOS home screen                       |
-| `public/og.png`        | Link preview card                                     |
+| File                 | Used for                              |
+| -------------------- | ------------------------------------- |
+| `public/logo.png`    | Header and footer                     |
+| `public/favicon.png` | Browser tab and iOS home screen       |
+| `public/og.png`      | Link preview card                     |
 
 To regenerate after replacing the artwork:
 
@@ -235,15 +234,17 @@ To regenerate after replacing the artwork:
 npm run logo:assets
 ```
 
-That installs `sharp` temporarily (it is not a project dependency), trims the
-white surround, and detects where the icon mark ends and the wordmark begins —
-so the crops adapt rather than being hardcoded.
+That installs `sharp` temporarily (it is not a project dependency). The logo is
+never cropped — the only thing removed is the blank paper around the artwork
+(1536x1024 down to 950x659), which is what lets it render larger on the page.
+The favicon pads the logo onto a square rather than cutting it down to the icon.
 
-Two notes on why it is split this way:
+Two notes:
 
-- The lockup is **stacked** (mark above the wordmark, roughly 1.4:1). At the
-  80px header height the wordmark and tagline would be illegible, so the header
-  pairs the icon mark with live "Jeevon" text in the serif face.
+- The lockup is **stacked** (mark above the wordmark, about 1.44:1), so the
+  header is taller than usual — `h-24 sm:h-28` — to give it room. If you change
+  the header height, update `scroll-padding-top` in `src/index.css` and the
+  `scroll-mt-*` on each section, or anchor links will land under the header.
 - The artwork has a white background rather than transparency. The header uses
   `mix-blend-multiply` so that white melts into the ivory page, and the footer
   sits the logo on an ivory card because the art is dark green on light.

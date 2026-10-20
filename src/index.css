@@ -53,7 +53,8 @@
     /* Smooth in-page navigation, offset so the sticky header never
        covers a section heading when we jump to it. */
     scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
+    /* Must clear the sticky header (h-24 / sm:h-28 = 96px / 112px). */
+    scroll-padding-top: 8rem;
     -webkit-text-size-adjust: 100%;
   }
 
