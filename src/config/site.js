@@ -47,7 +47,7 @@ export const CONTACT = {
   phoneHref: 'tel:+910000000000',
   email: 'hello@yourbrand.com',
   emailHref: 'mailto:hello@yourbrand.com',
-  address: 'Village Dharasingh, Post Piskapanga, Block Chandrapur, Rayagada, Odisha 765019',
+  address: 'Kasturinagar, Rayagada, Odisha',
   hours: 'Mon–Sat, 10am – 7pm',
 }
 
