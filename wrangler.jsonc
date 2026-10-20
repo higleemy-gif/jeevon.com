@@ -5,7 +5,9 @@
   // You do NOT need this file if you deploy via Cloudflare Pages' GitHub
   // integration — in that case set the build command and output directory in
   // the Pages dashboard instead. See the Deploy section of README.md.
-  "name": "jeevon-website",
+  // Must match the Worker/project name in the Cloudflare dashboard exactly,
+  // or Workers Builds fails with a name mismatch error.
+  "name": "jeevon-com",
   "compatibility_date": "2026-10-20",
 
   // Assets-only Worker: no server code, Cloudflare just serves ./dist.
