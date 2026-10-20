@@ -1,0 +1,18 @@
+{
+  // Config for deploying as a Worker with static assets:
+  //   npm run build && npx wrangler deploy
+  //
+  // You do NOT need this file if you deploy via Cloudflare Pages' GitHub
+  // integration — in that case set the build command and output directory in
+  // the Pages dashboard instead. See the Deploy section of README.md.
+  "name": "jeevon-website",
+  "compatibility_date": "2026-10-20",
+
+  // Assets-only Worker: no server code, Cloudflare just serves ./dist.
+  "assets": {
+    "directory": "./dist",
+    // Unknown paths fall back to index.html rather than a hard 404. The site
+    // is a single page, so this keeps stray links working.
+    "not_found_handling": "single-page-application"
+  }
+}

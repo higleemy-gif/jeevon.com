@@ -1,0 +1,28 @@
+# Cloudflare response headers.
+# Copied verbatim into dist/ at build time and read by Cloudflare Pages
+# (and by Workers static assets). Lines starting with # are comments.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+  # HSTS is intentionally left off. Once a browser sees it, it refuses plain
+  # HTTP for your domain for the full max-age and you cannot take that back.
+  # Turn it on in the Cloudflare dashboard (SSL/TLS -> Edge Certificates)
+  # once you are confident the custom domain is settled, or uncomment:
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+  # A Content-Security-Policy is worth adding once your final domains are
+  # known. Template — replace <your-supabase-host> before enabling:
+  # Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://<your-supabase-host>; frame-ancestors 'none'; base-uri 'self'
+
+# Vite fingerprints everything in /assets, so it can be cached forever.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The HTML entry point must never be cached, or visitors keep getting the
+# old build after you deploy.
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
