@@ -15,7 +15,7 @@ npm install
 
 ## 2. WhatsApp number
 
-Already set to **917205903961** (+91 72059 03961) in `src/config/site.js`.
+Already set to **918144247345** (+91 81442 47345) in `src/config/site.js`.
 Every order submitted through the form lands in that chat.
 
 To change it, either edit `WHATSAPP_NUMBER` there or override it in `.env.local`:

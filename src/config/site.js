@@ -34,9 +34,9 @@ export const DEFAULT_UNIT_PRICE = 2999
  */
 const WHATSAPP_PLACEHOLDER = '910000000000'
 
-// 7205903961 with India's country code 91 -> +91 72059 03961
+// 8144247345 with India's country code 91 -> +91 81442 47345
 export const WHATSAPP_NUMBER =
-  import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, '') || '917205903961'
+  import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, '') || '918144247345'
 
 /** False while the number above is still the untouched placeholder. */
 export const isWhatsAppConfigured =
