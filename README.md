@@ -206,6 +206,7 @@ Read orders from Studio, or server-side with the `service_role` key.
 | What                     | Where                                                                     |
 | ------------------------ | ------------------------------------------------------------------------- |
 | Brand name, tagline      | `src/config/site.js`                                                      |
+| Logo                     | `logo/` (master art) → `npm run logo:assets` → `public/`                   |
 | Flat price               | `src/config/site.js` → `DEFAULT_UNIT_PRICE`                               |
 | WhatsApp number          | `.env.local` → `VITE_WHATSAPP_NUMBER`, or `src/config/site.js`            |
 | WhatsApp message layout  | `src/lib/whatsapp.js` → `buildOrderMessage`                               |
@@ -215,6 +216,37 @@ Read orders from Studio, or server-side with the `service_role` key.
 | Heading / body typeface  | `index.html` (Google Fonts link) + `--font-serif` / `--font-sans`         |
 | Products                 | the `products` table — or `src/data/products.js` for the offline fallback  |
 | Benefits copy            | `src/components/Benefits.jsx` → `BENEFITS`                                |
+
+### Logo
+
+The master artwork lives in `logo/`. The web assets in `public/` are generated
+from it, not hand-edited:
+
+| File                   | Used for                                              |
+| ---------------------- | ----------------------------------------------------- |
+| `public/logo.png`      | Full stacked lockup — shown in the footer             |
+| `public/logo-mark.png` | Icon mark only — shown in the header beside the name  |
+| `public/favicon.png`   | Browser tab and iOS home screen                       |
+| `public/og.png`        | Link preview card                                     |
+
+To regenerate after replacing the artwork:
+
+```bash
+npm run logo:assets
+```
+
+That installs `sharp` temporarily (it is not a project dependency), trims the
+white surround, and detects where the icon mark ends and the wordmark begins —
+so the crops adapt rather than being hardcoded.
+
+Two notes on why it is split this way:
+
+- The lockup is **stacked** (mark above the wordmark, roughly 1.4:1). At the
+  80px header height the wordmark and tagline would be illegible, so the header
+  pairs the icon mark with live "Jeevon" text in the serif face.
+- The artwork has a white background rather than transparency. The header uses
+  `mix-blend-multiply` so that white melts into the ivory page, and the footer
+  sits the logo on an ivory card because the art is dark green on light.
 
 ### Prices
 

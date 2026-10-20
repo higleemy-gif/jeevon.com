@@ -1,6 +1,5 @@
 import { BRAND, CONTACT, SOCIALS } from '../config/site'
 import {
-  LeafMark,
   PhoneIcon,
   MailIcon,
   PinIcon,
@@ -27,13 +26,17 @@ export default function Footer() {
       <div className="container-page grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4">
         {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-full bg-sage-100 text-sage-900">
-              <LeafMark className="size-5" />
-            </span>
-            <span className="font-serif text-xl text-ivory">{BRAND.name}</span>
-          </div>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-sage-200">{BRAND.description}</p>
+          {/* The footer column has room for the full stacked lockup, so show
+              the real logo complete with its tagline. It sits on an ivory card
+              because the artwork is dark green on a light ground. */}
+          <img
+            src="/logo.png"
+            alt={`${BRAND.name} — Care, Nurture, Empower`}
+            width="346"
+            height="240"
+            className="h-24 w-auto rounded-2xl bg-ivory px-4 py-3"
+          />
+          <p className="mt-5 max-w-xs text-sm leading-relaxed text-sage-200">{BRAND.description}</p>
         </div>
 
         {/* Shop */}

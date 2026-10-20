@@ -8,12 +8,12 @@
       name="description"
       content="Jeevon makes clean, dermatologist-safe skincare and everyday healthcare essentials. Genuine products, delivered to your doorstep."
     />
-    <meta name="theme-color" content="#6e8a6c" />
+    <!-- Deep green sampled from the logo artwork -->
+    <meta name="theme-color" content="#1a4133" />
 
     <!-- Link preview card (WhatsApp, iMessage, Slack, Twitter, Facebook).
-         Set og:url to your real domain after the first deploy. To get an image
-         in the card, add a 1200x630 PNG at public/og.png and uncomment the
-         og:image tags — social scrapers do not render SVG previews. -->
+         Scrapers need an ABSOLUTE URL for og:image, so swap both commented
+         lines in for your real domain once it is live. -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Jeevon" />
     <meta property="og:title" content="Jeevon — Clean Skincare &amp; Everyday Healthcare" />
@@ -21,10 +21,12 @@
       property="og:description"
       content="Dermatologist-safe formulas and everyday health essentials. Genuine products, delivered to your doorstep."
     />
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jeevon — Care, Nurture, Empower" />
     <!-- <meta property="og:url" content="https://yourdomain.com/" /> -->
     <!-- <meta property="og:image" content="https://yourdomain.com/og.png" /> -->
-    <!-- <meta property="og:image:width" content="1200" /> -->
-    <!-- <meta property="og:image:height" content="630" /> -->
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Fonts: elegant serif for headings, clean sans for body -->
@@ -35,7 +37,9 @@
       rel="stylesheet"
     />
 
-    <link rel="icon" type="image/svg+xml" href="/leaf.svg" />
+    <!-- Favicon: the logo's icon mark -->
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="256x256" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
   </head>
   <body>
     <div id="root"></div>

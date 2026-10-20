@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BRAND } from '../config/site'
-import { LeafMark, MenuIcon, CloseIcon } from './icons'
+import { MenuIcon, CloseIcon } from './icons'
 
 const NAV_LINKS = [
   { label: 'Products', href: '#products' },
@@ -46,13 +46,21 @@ export default function Header() {
     >
       <div className="container-page flex h-20 items-center justify-between gap-4">
         {/* Brand */}
+        {/* The supplied logo is a stacked lockup, so at header height its
+            wordmark would be unreadable. Pair the icon mark with live text
+            instead. `mix-blend-multiply` melts the artwork's near-white
+            background into the ivory header. */}
         <a
           href="#top"
           className="flex items-center gap-2.5 rounded-sm text-ink transition-opacity hover:opacity-80"
         >
-          <span className="grid size-9 place-items-center rounded-full bg-sage-500 text-ivory">
-            <LeafMark className="size-5" />
-          </span>
+          <img
+            src="/logo-mark.png"
+            alt=""
+            width="153"
+            height="160"
+            className="h-10 w-auto mix-blend-multiply"
+          />
           <span className="font-serif text-xl tracking-tight">{BRAND.name}</span>
         </a>
 
